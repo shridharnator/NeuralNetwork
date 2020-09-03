@@ -11,7 +11,7 @@ class Matrix {
 public:
 	Matrix(int numRows,int numCols,bool isRandom);
 	Matrix *transpose();
-	void setValue(int r, int c, double v);
+	double setValue(int r, int c, double v);
 	double getValue(int r, int c);
 	double generateRandomNumber();
 	int getNumRows();

@@ -20,17 +20,23 @@ Matrix::Matrix(int numRows, int numCols, bool isRandom)
 
 Matrix* Matrix::transpose()
 {
-
-	return nullptr;
+	Matrix *m = new Matrix(this->numCols, this->numRows, false);
+	for (int i = 0; i < numRows; i++) {
+		for (int j = 0; j < numCols; j++) {
+			m->setValue(j, i,this->getValue(i,j));
+		}
+	}
+	return m;
 }
 
-void Matrix::setValue(int r, int c, double v)
+double Matrix::setValue(int r, int c, double v)
 {
+	return this->values.at(r).at(c) = v;
 }
 
 double Matrix::getValue(int r, int c)
 {
-	return 0.0;
+	return this->values.at(r).at(c);
 }
 
 double Matrix::generateRandomNumber()

@@ -8,7 +8,10 @@ int main(int argc, char** argv) {
 	//cout << "Val :" << n->getVal()<<endl;
 	//cout << "Activated Val :" << n->getActivatedVal() << endl;
 	//cout << "Derived Val :" << n->getDerivedVal() << endl;
-	Matrix* m = new Matrix(1000, 1000,true);
+	Matrix* m = new Matrix(3, 2,true);
 	m->printToConsole();
+	cout << "---------------------------------------------------"<<endl;
+	Matrix* mT = m->transpose();
+	mT->printToConsole();
 	return 0;
 }
