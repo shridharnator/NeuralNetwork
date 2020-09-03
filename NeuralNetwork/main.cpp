@@ -2,9 +2,10 @@
 #include"Neuron.h"
 using namespace std;
 int main(int argc, char** argv) {
-	Neuron* n = new Neuron(0.9);
+	double input = 0.9;
+	Neuron* n = new Neuron(input);
 	cout << "Val :" << n->getVal()<<endl;
-	cout << " Activated Val :" << n->getActivatedVal() << endl;
+	cout << "Activated Val :" << n->getActivatedVal() << endl;
 	cout << "Derived Val :" << n->getDerivedVal() << endl;
 	return 0;
 }
