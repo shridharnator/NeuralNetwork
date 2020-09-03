@@ -9,6 +9,7 @@ using namespace std;
 class Neuron {
 public:
 	Neuron(double val);
+	void setVal(double v);
 
 	
 	//Fast Sigmoid

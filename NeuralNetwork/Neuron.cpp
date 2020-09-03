@@ -7,6 +7,13 @@ Neuron::Neuron(double val)
 
 }
 
+void Neuron::setVal(double v)
+{
+	this->val = val;
+	activate();
+	derive();
+}
+
 void Neuron::activate()
 {
 	

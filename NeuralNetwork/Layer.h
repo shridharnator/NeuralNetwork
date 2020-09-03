@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #ifndef _Layer_H_
 #define _Layer_H_
 #include<iostream>
