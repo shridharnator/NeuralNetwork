@@ -33,10 +33,59 @@ void NeuralNetwork::printToConsole()
 			m->printToConsole();
 			
 		}
+		
 		else {
 			Matrix* m = this->layers.at(i)->matrixifyActivatedVals();
 			m->printToConsole();
+					}
+		cout << "==================================" << endl;
+		if (i < this->layers.size() - 1) {
+			cout << "Weight Matrix : " << i << endl;
+			this->getWeightMatrix(i)->printToConsole();
+		}
+		cout << "=====================================" << endl;
+	}
+}
+
+void NeuralNetwork::feedForward()
+{
+	for (size_t i = 0; i < (this->layers.size() - 1); i++) {
+		Matrix* a = this->getNeuronMatrix(i);
+		if (i != 0) {
+			a = this->getActivatedNeuronMatrix(i);
+		}
+		Matrix* b = this->getWeightMatrix(i);
+		Matrix* c = (new MultiplyMatrix(a, b))->execute();
+		vector<double> vals;
+		for (int c_index = 0; c_index < c->getNumCols(); c_index++) {
+			this->setNeuronValue(i + 1, c_index, c->getValue(0, c_index));
 
 		}
 	}
+}
+
+Matrix* NeuralNetwork::getNeuronMatrix(int index)
+{
+	return this->layers.at(index)->matrixifyVals();
+	
+}
+
+Matrix* NeuralNetwork::getActivatedNeuronMatrix(int index)
+{
+	return this->layers.at(index)->matrixifyActivatedVals();
+}
+
+Matrix* NeuralNetwork::getDerivedNeuronMatrix(int index)
+{
+	return this->layers.at(index)->matrixifyDerivedVals();
+}
+
+Matrix* NeuralNetwork::getWeightMatrix(int index)
+{
+	return this->weightMatrices.at(index);
+}
+
+void NeuralNetwork::setNeuronValue(int indexLayer, int indexNeuron, double val)
+{
+	this->layers.at(indexLayer)->setVal(indexNeuron, val);
 }

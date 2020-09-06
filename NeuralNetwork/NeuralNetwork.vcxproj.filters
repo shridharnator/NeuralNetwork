@@ -27,6 +27,12 @@
     <ClInclude Include="NeuralNetwork.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="MultiplyMatrix.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixToVector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +48,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NeuralNetwork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplyMatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixToVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

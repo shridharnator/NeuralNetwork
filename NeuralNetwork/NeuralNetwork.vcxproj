@@ -142,12 +142,16 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="MatrixToVector.cpp" />
+    <ClCompile Include="MultiplyMatrix.cpp" />
     <ClCompile Include="NeuralNetwork.cpp" />
     <ClCompile Include="Neuron.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Layer.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="MatrixToVector.h" />
+    <ClInclude Include="MultiplyMatrix.h" />
     <ClInclude Include="NeuralNetwork.h" />
     <ClInclude Include="Neuron.h" />
   </ItemGroup>

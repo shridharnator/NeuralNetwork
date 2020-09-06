@@ -5,6 +5,7 @@
 #include<math.h>
 #include"Matrix.h"
 #include"Layer.h"
+#include"MultiplyMatrix.h"
 #include<vector>
 
 using namespace std;
@@ -14,7 +15,12 @@ public:
 	void setCurrentInput(vector<double> input);
 	int topologySize;
 	void printToConsole();
-
+	void feedForward();
+	Matrix* getNeuronMatrix(int index);
+	Matrix* getActivatedNeuronMatrix(int index);
+	Matrix* getDerivedNeuronMatrix(int index);
+	Matrix* getWeightMatrix(int index);
+	void setNeuronValue(int indexLayer, int indexNeuron, double val);
 
 private:
 	int topologysize;
@@ -23,6 +29,7 @@ private:
 	vector<Layer*> layers;
 	vector<Matrix*> weightMatrices;
 	vector<double> input;
+	//int indexLayer;
 
 
 };
