@@ -15,6 +15,7 @@ public:
 	Matrix *matrixifyVals();
 	Matrix *matrixifyActivatedVals();
 	Matrix *matrixifyDerivedVals();
+	vector<Neuron*> getNeurons(); 
 
 private:
 	int size;

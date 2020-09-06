@@ -13,14 +13,19 @@ class NeuralNetwork {
 public:
 	NeuralNetwork(vector<int> topology);
 	void setCurrentInput(vector<double> input);
+	void setCurrentTarget(vector<double> target);
 	int topologySize;
 	void printToConsole();
 	void feedForward();
+	void setErrors();
 	Matrix* getNeuronMatrix(int index);
 	Matrix* getActivatedNeuronMatrix(int index);
 	Matrix* getDerivedNeuronMatrix(int index);
 	Matrix* getWeightMatrix(int index);
 	void setNeuronValue(int indexLayer, int indexNeuron, double val);
+	double getTotalError();
+	vector<double> getErrors();
+	//void seterrors();
 
 private:
 	int topologysize;
@@ -29,6 +34,10 @@ private:
 	vector<Layer*> layers;
 	vector<Matrix*> weightMatrices;
 	vector<double> input;
+	double error;
+	vector<double> target;
+	vector<double> errors{ 0,0,0 };
+	vector<double> historicalErrors;
 	//int indexLayer;
 
 

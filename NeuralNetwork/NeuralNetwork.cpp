@@ -24,6 +24,11 @@ void NeuralNetwork::setCurrentInput(vector<double> input)
 	//this->layers.at(0);
 }
 
+void NeuralNetwork::setCurrentTarget(vector<double> target)
+{
+	this->target = target;
+}
+
 void NeuralNetwork::printToConsole()
 {
 	for (size_t i = 0; i < this->layers.size(); i++) {
@@ -64,6 +69,30 @@ void NeuralNetwork::feedForward()
 	}
 }
 
+void NeuralNetwork::setErrors()
+{
+	if (this->target.size() == 0) {
+		cerr << "No target for this neural network" << endl;
+		assert(false);
+	}
+	if (this->target.size() != this->layers.at(this->layers.size() - 1)->getNeurons().size()) {
+		cerr << "Target size is not the same as output layer size : " << this->layers.at(this->layers.size() - 1)->getNeurons().size() << endl;
+		assert(false);
+	}
+	this->error = 0.00;
+	int outputLayerIndex = this->layers.size() - 1;
+	vector<Neuron*>outputNeurons = this->layers.at(outputLayerIndex)->getNeurons();
+	for (size_t i = 0; i < target.size(); i++) {
+		double tempErr = ((outputNeurons.at(i)->getActivatedVal()) - target.at(i));
+		this->errors.at(i) = tempErr;
+		this->error += tempErr;
+	}
+	historicalErrors.push_back(this->error);
+}
+
+
+
+
 Matrix* NeuralNetwork::getNeuronMatrix(int index)
 {
 	return this->layers.at(index)->matrixifyVals();
@@ -88,4 +117,19 @@ Matrix* NeuralNetwork::getWeightMatrix(int index)
 void NeuralNetwork::setNeuronValue(int indexLayer, int indexNeuron, double val)
 {
 	this->layers.at(indexLayer)->setVal(indexNeuron, val);
+}
+
+double NeuralNetwork::getTotalError()
+{
+	return this->error;
+}
+
+vector<double> NeuralNetwork::getErrors()
+{
+	return this->errors;
+}
+
+void NeuralNetwork::seterrors()
+{
+
 }

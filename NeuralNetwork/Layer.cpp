@@ -44,3 +44,9 @@ Matrix* Layer::matrixifyDerivedVals()
 	return m;
 }
 
+vector<Neuron*> Layer::getNeurons()
+{
+	 return this->neurons;
+	
+}
+
