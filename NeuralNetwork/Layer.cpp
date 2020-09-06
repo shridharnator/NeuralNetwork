@@ -4,7 +4,7 @@ Layer::Layer(int size)
 {
 	this->size = size;
 	for (int i = 0; i < size; i++) {
-		Neuron* n = new Neuron(0.00);
+		Neuron* n = new Neuron(1.0);//this is where the error is at the value is not being passed correctly
 		this->neurons.push_back(n);
 	}
 }

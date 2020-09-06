@@ -9,7 +9,7 @@ Neuron::Neuron(double val)
 
 void Neuron::setVal(double v)
 {
-	this->val = val;
+	this->val = v;//this was this->val=val;
 	activate();
 	derive();
 }
