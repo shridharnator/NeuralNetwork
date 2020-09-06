@@ -17,7 +17,7 @@ public:
 
 
 private:
-	int size;
+	int topologysize;
 	
 	vector<int> topology;
 	vector<Layer*> layers;

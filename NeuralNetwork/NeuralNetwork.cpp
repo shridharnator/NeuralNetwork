@@ -2,16 +2,16 @@
 
 NeuralNetwork::NeuralNetwork(vector<int> topology)
 {
-	topology = topology;
-	topologySize = topology.size();
+	this->topology = topology;
+	this->topologySize = topology.size();
 	for (int i =0 ; i < topologySize; i++) {
 		Layer *l = new Layer(topology.at(i));
-		layers.push_back(l);
+		this->layers.push_back(l);
 	}
 	for (int i = 0; i < (topologySize - 1); i++) {
 		Matrix *m = new Matrix(topology.at(i),topology.at(i+1),true);
 
-		weightMatrices.push_back(m);
+		this->weightMatrices.push_back(m);
 	}
 }
 

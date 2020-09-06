@@ -1,6 +1,7 @@
 #include<iostream>
 #include"Neuron.h"
 #include"Matrix.h"
+#include"Layer.h"
 #include"NeuralNetwork.h"
 using namespace std;
 int main(int argc, char** argv) {
@@ -19,7 +20,7 @@ int main(int argc, char** argv) {
 	topology.push_back(2);
 	topology.push_back(3);
 	vector<double> input;
-	input.push_back(1.5);
+	input.push_back(1.0);
 	input.push_back(0.0);
 	input.push_back(1.0);
 
